@@ -1,4 +1,3 @@
-// 13/10/2024
 const fs = require("fs");
 
 // adding a task - reads the data json, appends the new task and writes it back to the file

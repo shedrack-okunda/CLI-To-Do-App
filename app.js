@@ -1,8 +1,5 @@
-// 13/10/2024
-// import chalk from "chalk";
 const tasks = require("./tasks");
-
-// console.log(chalk.blue("hello world"));
+const colors = require("colors");
 
 // reads command from the terminal
 const command = process.argv[2];
