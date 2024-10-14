@@ -1,4 +1,5 @@
 const fs = require("fs");
+const colors = require("colors");
 
 // adding a task - reads the data json, appends the new task and writes it back to the file
 // accepts a category
@@ -26,7 +27,8 @@ const listTasks = () => {
   const tasks = loadTasks();
   tasks.forEach((task, index) => {
     console.log(
-      `${index + 1}. ${task.name} - ${task.completed ? "Completed" : "Incomplete"}`,
+      `${index + 1}. ${task.name} - ${task.completed ? "Completed" : "Incomplete"}`
+        .blue,
     );
   });
 };
@@ -46,9 +48,9 @@ const updateTaskStatus = (taskName, newStatus) => {
   if (taskIndex !== -1) {
     tasks[taskIndex].status = newStatus;
     saveTasks(tasks);
-    console.log(`Task "${taskName}" updated to "${newStatus}" status.`);
+    console.log(`Task "${taskName}" updated to "${newStatus}" status.`.blue);
   } else {
-    console.log(`Task "${taskName}" not found.`);
+    console.log(`Task "${taskName}" not found.`.red);
   }
 };
 
@@ -69,11 +71,12 @@ const listTasksByCategory = (category) => {
     console.log(`Tasks under '${category}':`);
     filteredTasks.forEach((task, index) => {
       console.log(
-        `${index + 1}. ${task.name} - ${task.completed ? "Completed" : "Incomplete"}`,
+        `${index + 1}. ${task.name} - ${task.completed ? "Completed" : "Incomplete"}`
+          .green,
       );
     });
   } else {
-    console.log(`No tasks found under '${category}'`);
+    console.log(`No tasks found under '${category}'`.red);
   }
 };
 

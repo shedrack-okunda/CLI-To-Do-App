@@ -10,7 +10,7 @@ const newStatus = process.argv[4];
 if (command === "add") {
   const category = process.argv[4] || "general";
   tasks.addTask(taskName, category);
-  console.log(`Task "${taskName}" added under category "${category}".`);
+  console.log(`Task "${taskName}" added under category "${category}".`.green);
 }
 
 // lists the tasks in the JSON file
@@ -24,12 +24,12 @@ else if (command === "update") {
 // deletes a task
 else if (command === "delete") {
   tasks.deleteTask(taskName);
-  console.log(`Task "${taskName}" deleted.`);
+  console.log(`Task "${taskName}" deleted.`.red);
 }
 // marks a task as completed
 else if (command === "complete") {
   tasks.completeTask(taskName);
-  console.log(`Task "${taskName}" marked as completed.`);
+  console.log(`Task "${taskName}" marked as completed.`.green);
 }
 // list a list of sorted tasks
 else if (command === "sort") {
@@ -43,6 +43,7 @@ else if (command === "status") {
 // executes where there is no command passed
 else {
   console.log(
-    "Command not recognized. Available commands: add, list, delete, complete, sort, update, status.",
+    "Command not recognized. Available commands: add, list, delete, complete, sort, update, status."
+      .yellow,
   );
 }
