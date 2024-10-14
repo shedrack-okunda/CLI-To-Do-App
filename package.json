@@ -1,0 +1,22 @@
+{
+  "name": "to-do-cli",
+  "version": "1.0.0",
+  "description": "a to-do list that runs and uses the terminal",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "yes"
+  },
+  "keywords": [
+    "task"
+  ],
+  "author": "shedrack okunda",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "colors": "^1.4.0"
+  }
+}
